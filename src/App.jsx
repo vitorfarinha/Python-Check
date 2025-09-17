@@ -2,406 +2,241 @@ import React, { useState } from 'react'
 
 const questions = [
   {
-    "id": 1,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "Which of these is a valid variable name in Python?",
+    options: ["2number", "my_variable"],
+    answer: "my_variable",
+    explanation: "Variable names cannot start with a number. 'my_variable' is valid."
   },
   {
-    "id": 2,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What will this condition output? if 5 > 3: print('Yes')",
+    options: ["Yes", "No"],
+    answer: "Yes",
+    explanation: "Since 5 is greater than 3, the condition is true and 'Yes' will print."
   },
   {
-    "id": 3,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "Which operator is used for equality in Python?",
+    options: ["=", "=="],
+    answer: "==",
+    explanation: "'=' assigns values, '==' checks equality."
   },
   {
-    "id": 4,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which data type does Python use for whole numbers?",
+    options: ["int", "str"],
+    answer: "int",
+    explanation: "'int' represents integers (whole numbers)."
   },
   {
-    "id": 5,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What is the result of 7 % 2?",
+    options: ["1", "3"],
+    answer: "1",
+    explanation: "% is the modulo operator. 7 divided by 2 leaves remainder 1."
   },
   {
-    "id": 6,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which of these is a Boolean value?",
+    options: ["True", "10"],
+    answer: "True",
+    explanation: "Boolean values are True or False."
   },
   {
-    "id": 7,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What will print? x = 5; print(x == 5)",
+    options: ["True", "False"],
+    answer: "True",
+    explanation: "x == 5 checks equality, which is True."
   },
   {
-    "id": 8,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which operator means 'not equal to' in Python?",
+    options: ["!=", "=>"],
+    answer: "!=",
+    explanation: "!= is the not-equal operator."
   },
   {
-    "id": 9,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What keyword is used to start a conditional in Python?",
+    options: ["if", "for"],
+    answer: "if",
+    explanation: "'if' starts a conditional block."
   },
   {
-    "id": 10,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which operator is used for 'and' logic?",
+    options: ["and", "&"],
+    answer: "and",
+    explanation: "Python uses 'and' for logical AND."
   },
   {
-    "id": 11,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What will this print? print(type('Hello'))",
+    options: ["<class 'str'>", "<class 'int'>"],
+    answer: "<class 'str'>",
+    explanation: "'Hello' is a string, so type is <class 'str'>."
   },
   {
-    "id": 12,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which of these is a string?",
+    options: ["42", "'42'"],
+    answer: "'42'",
+    explanation: "Quotes make it a string. Without quotes it's an integer."
   },
   {
-    "id": 13,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What does input('Name: ') return?",
+    options: ["Always a string", "It depends"],
+    answer: "Always a string",
+    explanation: "input() always returns a string, even if the user types numbers."
   },
   {
-    "id": 14,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which symbol is used for comments in Python?",
+    options: ["#", "//"],
+    answer: "#",
+    explanation: "Python uses '#' for comments."
   },
   {
-    "id": 15,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "Which operator is used for OR logic?",
+    options: ["or", "||"],
+    answer: "or",
+    explanation: "Python uses 'or' for logical OR."
   },
   {
-    "id": 16,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What is the output? print(3 * 'Hi')",
+    options: ["HiHiHi", "Error"],
+    answer: "HiHiHi",
+    explanation: "Strings can be multiplied by integers to repeat them."
   },
   {
-    "id": 17,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "Which operator is used to raise a number to a power?",
+    options: ["**", "^"],
+    answer: "**",
+    explanation: "In Python, '**' is exponentiation."
   },
   {
-    "id": 18,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What will print? x = 10; x = x + 2; print(x)",
+    options: ["12", "10"],
+    answer: "12",
+    explanation: "x was updated to 10 + 2 = 12."
   },
   {
-    "id": 19,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What keyword starts a loop?",
+    options: ["for", "next"],
+    answer: "for",
+    explanation: "'for' is used to start a loop in Python."
   },
   {
-    "id": 20,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What is the output? for i in range(3): print(i)",
+    options: ["0 1 2", "1 2 3"],
+    answer: "0 1 2",
+    explanation: "range(3) produces 0, 1, 2."
   },
   {
-    "id": 21,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What is the type of True in Python?",
+    options: ["bool", "int"],
+    answer: "bool",
+    explanation: "True and False are of type bool."
   },
   {
-    "id": 22,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which function gives the length of a string?",
+    options: ["len()", "count()"],
+    answer: "len()",
+    explanation: "len() returns the number of characters in a string."
   },
   {
-    "id": 23,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What will this print? print('A' in 'Cat')",
+    options: ["True", "False"],
+    answer: "True",
+    explanation: "'A' is present in 'Cat' (case-sensitive)."
   },
   {
-    "id": 24,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What is the result of 10 // 3?",
+    options: ["3", "3.33"],
+    answer: "3",
+    explanation: "// does floor division, dropping the decimal part."
   },
   {
-    "id": 25,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "Which operator joins two strings?",
+    options: ["+", "*"],
+    answer: "+",
+    explanation: "The + operator concatenates strings."
   },
   {
-    "id": 26,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What is the output? print(5 > 7)",
+    options: ["False", "True"],
+    answer: "False",
+    explanation: "5 is not greater than 7, so it is False."
   },
   {
-    "id": 27,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "Which is correct syntax to define a variable?",
+    options: ["x = 5", "5 = x"],
+    answer: "x = 5",
+    explanation: "Variables must have the name on the left of '='."
   },
   {
-    "id": 28,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which data type is ['a','b','c']?",
+    options: ["list", "tuple"],
+    answer: "list",
+    explanation: "Square brackets define a list."
   },
   {
-    "id": 29,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What will print? print(len([1,2,3,4]))",
+    options: ["4", "3"],
+    answer: "4",
+    explanation: "The list has 4 items, so len() is 4."
   },
   {
-    "id": 30,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What does == compare?",
+    options: ["Values", "Memory addresses"],
+    answer: "Values",
+    explanation: "== checks if two values are equal."
   },
   {
-    "id": 31,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "Which keyword exits a loop early?",
+    options: ["break", "exit"],
+    answer: "break",
+    explanation: "break stops the loop immediately."
   },
   {
-    "id": 32,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which symbol is used for multiplication?",
+    options: ["*", "x"],
+    answer: "*",
+    explanation: "In Python '*' means multiplication."
   },
   {
-    "id": 33,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What will this print? print(bool(0))",
+    options: ["False", "True"],
+    answer: "False",
+    explanation: "0 is considered False in Boolean context."
   },
   {
-    "id": 34,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which keyword is used to define a function?",
+    options: ["def", "func"],
+    answer: "def",
+    explanation: "'def' introduces a function definition."
   },
   {
-    "id": 35,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "What will print? print('py' + 'thon')",
+    options: ["python", "py thon"],
+    answer: "python",
+    explanation: "The + operator concatenates without spaces."
   },
   {
-    "id": 36,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What will be the result of 4 != 5?",
+    options: ["True", "False"],
+    answer: "True",
+    explanation: "4 is not equal to 5, so != returns True."
   },
   {
-    "id": 37,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
+    question: "Which logical operator means 'not'?",
+    options: ["not", "!"],
+    answer: "not",
+    explanation: "Python uses 'not' for logical negation."
   },
   {
-    "id": 38,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "What will print? x = 3; print(x * 2)",
+    options: ["6", "32"],
+    answer: "6",
+    explanation: "3 * 2 equals 6."
   },
   {
-    "id": 39,
-    "question": "What is the correct way to create a variable in Python?",
-    "options": [
-      "x == 5",
-      "x = 5"
-    ],
-    "answer": "x = 5",
-    "explanation": "In Python, '=' assigns a value to a variable."
-  },
-  {
-    "id": 40,
-    "question": "Which operator is used for equality check in Python?",
-    "options": [
-      "=",
-      "=="
-    ],
-    "answer": "==",
-    "explanation": "In Python, '==' is used to compare values for equality, while '=' assigns a value."
+    question: "Which function converts a string to an integer?",
+    options: ["int()", "str()"],
+    answer: "int()",
+    explanation: "int() converts strings or floats to integers."
   }
-]
+];
+
 
 export default function App() {
   const [current, setCurrent] = useState(0)
